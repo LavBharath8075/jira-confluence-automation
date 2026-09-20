@@ -10,19 +10,22 @@ Use exactly these sections in order:
 - Next Week
 
 Rules:
-- Use bullet points only under each section.
+- Use a concise Markdown table or bullet points for Accomplishments.
+- Use bullet points for Blockers and Next Week.
 - Keep the total output to a maximum of 20 lines.
 - Use a professional tone.
 - Remove fluff words and filler language.
 - Write concise, factual updates only.
 - Do not include headings beyond the three required sections.
-- Do not include tables, paragraphs, or numbered lists.
+- Do not include paragraphs or numbered lists.
 
 Format example:
 
 ## Accomplishments
-- Completed item 1.
-- Completed item 2.
+| Accomplishment | Outcome |
+|---|---|
+| Completed item 1 | Result or impact |
+| Completed item 2 | Result or impact |
 
 ## Blockers
 - Blocker 1.
