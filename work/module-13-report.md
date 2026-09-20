@@ -39,7 +39,6 @@
 ## MCP Tool Test
 - Tool used: echo-windows
 - Output:
-The argument './path/to/mcp-echo.ps1' to the -File parameter does not exist. Pro
-vide the path to an existing '.ps1' file as an argument to the -File parameter.
-Windows PowerShell
-Copyright (C) Microsoft Corporation. All rights reserved.
+{"result":{"protocolVersion":"2024-11-05","serverInfo":{"version":"1.0.0","name":"echo-windows"},"capabilities":{"tools":{}}},"id":1,"jsonrpc":"2.0"}
+{"result":{"tools":[{"inputSchema":{"properties":{"message":{"type":"string","description":"Message to echo."}},"type":"object","required":["message"]},"description":"Echo a message back to the caller.","name":"echo"}]},"id":2,"jsonrpc":"2.0"}
+{"result":{"content":[{"text":"Module 13 MCP echo test succeeded","type":"text"}],"isError":false},"id":3,"jsonrpc":"2.0"}
