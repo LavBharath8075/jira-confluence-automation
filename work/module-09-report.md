@@ -1,10 +1,22 @@
 # Module 09 Completion Report
 
 ## Tracked Files
-fatal: not a git repository (or any of the parent directories): .git
+.gitignore
+README.md
+app.py
+backlog.md
+calculator.py
+calculator/main.py
+calculator/operations.py
+hello.txt
+main.py
+project_spec.md
+requirements-document.md
+requirements.txt
+test_calculator.py
 
 ## Backlog Commit History
-fatal: not a git repository (or any of the parent directories): .git
+32f687c (HEAD -> main) Module 9 commits
 
 ## backlog.md Contents
 # Implementation Backlog
