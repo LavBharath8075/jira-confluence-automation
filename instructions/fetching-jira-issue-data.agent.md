@@ -1,5 +1,7 @@
 # Fetch Jira Issue Data
 
+Shared standards: [./project-instruction-standards.agent.md](./project-instruction-standards.agent.md)
+
 Fetch and format issue data from the Jira API for reporting and summarisation.
 
 ## Input format

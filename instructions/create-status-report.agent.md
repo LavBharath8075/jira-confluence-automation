@@ -1,5 +1,7 @@
 # Create Weekly Status Report
 
+Shared standards: [./project-instruction-standards.agent.md](./project-instruction-standards.agent.md)
+
 Generate a weekly status report in Markdown format.
 
 Use exactly these sections in order:

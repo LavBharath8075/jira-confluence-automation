@@ -1,5 +1,8 @@
 # Instruction Files
 
+- [`./instructions/project-instruction-standards.agent.md`](./project-instruction-standards.agent.md) — shared writing and maintenance rules used across instruction files.
+  + Keywords: standards, formatting, reuse, conventions, shared rules
+
 - [`./instructions/create-status-report.agent.md`](./create-status-report.agent.md) — generate a concise weekly status report in Markdown.
   + Keywords: status report, weekly update, blockers, accomplishments
 
