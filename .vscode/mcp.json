@@ -25,5 +25,9 @@
         "JIRA_PROJECT": "${env:JIRA_PROJECT}"
       }
     }
+     "github": { 
+      "type": "http", 
+      "url": "https://api.githubcopilot.com/mcp/"
+    }  
   }
 }
