@@ -11,3 +11,6 @@
 
 - [`./instructions/fetching-jira-issue-data.agent.md`](./fetching-jira-issue-data.agent.md) — fetch and format Jira issue data for reporting workflows.
   + Keywords: Jira, issue data, API, fetch, formatting, reporting
+
+- [`./instructions/calculate-compound-interest.agent.md`](./calculate-compound-interest.agent.md) — calculate compound interest for a principal, rate, compounding frequency, and time period, then present the final amount and total interest earned.
+  + Keywords: compound interest, investment, final amount, total interest, financial calculation
