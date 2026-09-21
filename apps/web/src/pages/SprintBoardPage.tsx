@@ -8,6 +8,7 @@ export default function SprintBoardPage() {
 	return (
 		<main>
 			<h1>Sprint Board</h1>
+			<Link to="/issues/new">+ New Issue</Link>
 			<div style={{ display: "flex", gap: "1rem", alignItems: "flex-start" }}>
 				{STATUS_COLUMNS.map((status) => (
 					<section key={status} style={{ flex: 1, minWidth: 0 }}>

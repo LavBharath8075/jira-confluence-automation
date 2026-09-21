@@ -9,3 +9,5 @@ export interface Issue {
 	storyPoints: number;
 	priority: "Low" | "Medium" | "High" | "Critical";
 }
+
+export type IssueFormValues = Omit<Issue, "id" | "key">;

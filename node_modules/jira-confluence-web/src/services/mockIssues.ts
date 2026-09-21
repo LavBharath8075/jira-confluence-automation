@@ -1,4 +1,4 @@
-import type { Issue } from "../types";
+import type { Issue, IssueFormValues } from "../types";
 
 // Temporary in-memory sample data until the API's Jira integration is wired up.
 export const mockIssues: Issue[] = [
@@ -66,4 +66,22 @@ export const mockIssues: Issue[] = [
 
 export function getIssueById(id: string): Issue | undefined {
 	return mockIssues.find((issue) => issue.id === id);
+}
+
+export function createIssue(values: IssueFormValues): Issue {
+	const nextNumber = mockIssues.length + 101;
+	const issue: Issue = {
+		id: String(Date.now()),
+		key: `JCA-${nextNumber}`,
+		...values,
+	};
+	mockIssues.push(issue);
+	return issue;
+}
+
+export function updateIssue(id: string, values: IssueFormValues): Issue | undefined {
+	const issue = getIssueById(id);
+	if (!issue) return undefined;
+	Object.assign(issue, values);
+	return issue;
 }

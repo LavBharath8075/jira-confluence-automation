@@ -1,6 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import SprintBoardPage from "./pages/SprintBoardPage";
 import IssueDetailPage from "./pages/IssueDetailPage";
+import IssueFormPage from "./pages/IssueFormPage";
 
 function HomePage() {
 	return (
@@ -21,7 +22,9 @@ export default function App() {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/sprint-board" element={<SprintBoardPage />} />
+				<Route path="/issues/new" element={<IssueFormPage />} />
 				<Route path="/issues/:issueId" element={<IssueDetailPage />} />
+				<Route path="/issues/:issueId/edit" element={<IssueFormPage />} />
 			</Routes>
 		</>
 	);

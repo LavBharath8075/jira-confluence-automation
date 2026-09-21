@@ -17,6 +17,8 @@ export default function IssueDetailPage() {
 	return (
 		<main>
 			<Link to="/sprint-board">← Back to Sprint Board</Link>
+			{" | "}
+			<Link to={`/issues/${issue.id}/edit`}>Edit</Link>
 			<h1>
 				{issue.key}: {issue.summary}
 			</h1>
