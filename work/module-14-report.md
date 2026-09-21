@@ -11,50 +11,49 @@ This backlog translates the project specification into a practical delivery plan
 
 The best candidates for delegation to the GitHub coding agent are bounded application-code tasks with clear acceptance criteria and minimal external access requirements. In particular, consider delegating:
 
-- Issue #24: Create the application root directory and package folders.
-- Issue #23: Add `app.py`, `requirements.txt`, and the core package modules.
-- Issue #22: Create `config/` for environment and field-mapping configuration.
-- Issue #21: Add `tests/` with a basic structure for unit and validation tests.
-- Issue #18: Add required dependencies for Streamlit and supporting libraries.
-- Issue #14: Create a settings module to read environment variables and default configuration.
-- Issue #12: Create a minimal app shell for the Streamlit UI.
-- Issue #11: Build a page title, layout, and sidebar structure.
-- Issue #10: Add placeholders for report period selector, Jira status, narrative inputs, and download actions.
-- Issue #8: Define the data model for Jira issues and report snapshots.
-- Issue #7: Create issue models with required fields such as key, summary, assignee, status, priority, and dates.
-- Issue #6: Define report metadata for generation timestamp, reporting period, and history tracking.
-- Issue #3: Add a command to run the Streamlit app locally.
-- Issue #2: Add a command to run the unit tests from the project root.
+- Issue #28: Create the application root directory and package folders.
+- Issue #26: Add `app.py`, `requirements.txt`, and the core package modules.
+- Issue #27: Create `config/` for environment and field-mapping configuration.
+- Issue #29: Add `tests/` with a basic structure for unit and validation tests.
+- Issue #34: Add required dependencies for Streamlit and supporting libraries.
+- Issue #40: Create a settings module to read environment variables and default configuration.
+- Issue #38: Create a minimal app shell for the Streamlit UI.
+- Issue #43: Add placeholders for report period selector, Jira status, narrative inputs, and download actions.
+- Issue #44: Define the data model for Jira issues and report snapshots.
+- Issue #42: Create issue models with required fields such as key, summary, assignee, status, priority, and dates.
+- Issue #41: Define report metadata for generation timestamp, reporting period, and history tracking.
+- Issue #47: Add a command to run the Streamlit app locally.
+- Issue #50: Add a command to run the unit tests from the project root.
 
-Tasks involving Jira/MCP access, credential decisions, ambiguous product behavior, or cross-cutting architecture should be refined and reviewed by a human before delegation.
+Tasks involving Jira/MCP access, credential decisions, ambiguous product behavior, or cross-cutting architecture should be refined and reviewed by a human before delegation. Closed issues #1 and #11 are excluded from the delegation candidates.
 
 ## Phase 1: Setup
 
-- [ ] Create the project structure for the Streamlit app and shared package layout. — **application code** (#25)
-  - [ ] Create the application root directory and package folders. — **application code** (#24)
-  - [ ] Add `app.py`, `requirements.txt`, and the core package modules. — **application code** (#23)
-  - [ ] Create `config/` for environment and field-mapping configuration. — **application code** (#22)
-  - [ ] Add `tests/` with a basic structure for unit and validation tests. — **application code** (#21)
-- [ ] Define the runtime environment and dependency baseline. — **application code** (#20)
-  - [ ] Confirm Python version and package compatibility. — **application code** (#19)
-  - [ ] Add required dependencies for Streamlit and supporting libraries. — **application code** (#18)
-  - [ ] Document local setup steps for Windows development. — **application code** (#17)
-- [ ] Establish configuration patterns for Jira and report settings. — **application code** (#16)
-  - [ ] Decide how Jira URL, credentials, and project identifiers are loaded. — **application code** (#15)
-  - [ ] Create a settings module to read environment variables and default configuration. — **application code** (#14)
-  - [ ] Define a default project scope for `EPMCDMETST` and default timezone handling for `America/New_York`. — **application code** (#13)
-- [ ] Create a minimal app shell for the Streamlit UI. — **application code** (#12)
-  - [ ] Build a page title, layout, and sidebar structure. — **application code** (#11)
-  - [ ] Add placeholders for report period selector, Jira status, narrative inputs, and download actions. — **application code** (#10)
-  - [ ] Ensure the application launches without secret configuration in the default local environment. — **application code** (#9)
-- [ ] Define the data model for Jira issues and report snapshots. — **application code** (#8)
-  - [ ] Create issue models with required fields such as key, summary, assignee, status, priority, and dates. — **application code** (#7)
-  - [ ] Define report metadata for generation timestamp, reporting period, and history tracking. — **application code** (#6)
-  - [ ] Establish what missing values look like and how warnings are represented. — **application code** (#5)
-- [ ] Create a local development task flow. — **application code** (#4)
-  - [ ] Add a command to run the Streamlit app locally. — **application code** (#3)
-  - [ ] Add a command to run the unit tests from the project root. — **application code** (#2)
-  - [ ] Decide on a simple validation workflow for each feature before moving on. — **custom skill** (#1)
+- [ ] Create the project structure for the Streamlit app and shared package layout. — **application code** (#30)
+  - [ ] Create the application root directory and package folders. — **application code** (#28)
+  - [ ] Add `app.py`, `requirements.txt`, and the core package modules. — **application code** (#26)
+  - [ ] Create `config/` for environment and field-mapping configuration. — **application code** (#27)
+  - [ ] Add `tests/` with a basic structure for unit and validation tests. — **application code** (#29)
+- [ ] Define the runtime environment and dependency baseline. — **application code** (#32)
+  - [ ] Confirm Python version and package compatibility. — **application code** (#31)
+  - [ ] Add required dependencies for Streamlit and supporting libraries. — **application code** (#34)
+  - [ ] Document local setup steps for Windows development. — **application code** (#35)
+- [ ] Establish configuration patterns for Jira and report settings. — **application code** (#33)
+  - [ ] Decide how Jira URL, credentials, and project identifiers are loaded. — **application code** (#39)
+  - [ ] Create a settings module to read environment variables and default configuration. — **application code** (#40)
+  - [ ] Define a default project scope for `EPMCDMETST` and default timezone handling for `America/New_York`. — **application code** (#37)
+- [ ] Create a minimal app shell for the Streamlit UI. — **application code** (#38)
+  - [ ] Build a page title, layout, and sidebar structure. — **application code** (#36)
+  - [ ] Add placeholders for report period selector, Jira status, narrative inputs, and download actions. — **application code** (#43)
+  - [ ] Ensure the application launches without secret configuration in the default local environment. — **application code** (#45)
+- [ ] Define the data model for Jira issues and report snapshots. — **application code** (#44)
+  - [ ] Create issue models with required fields such as key, summary, assignee, status, priority, and dates. — **application code** (#42)
+  - [ ] Define report metadata for generation timestamp, reporting period, and history tracking. — **application code** (#41)
+  - [ ] Establish what missing values look like and how warnings are represented. — **application code** (#49)
+- [ ] Create a local development task flow. — **application code** (#46)
+  - [ ] Add a command to run the Streamlit app locally. — **application code** (#47)
+  - [ ] Add a command to run the unit tests from the project root. — **application code** (#50)
+  - [ ] Decide on a simple validation workflow for each feature before moving on. — **custom skill** (#48)
 
 ## Phase 2: Core Features
 
@@ -227,13 +226,20 @@ Tasks involving Jira/MCP access, credential decisions, ambiguous product behavio
 
 ## GitHub Issues
 
-Issue #1 was created with the GitHub CLI, not MCP; its `No` value is intentional and verified. The GitHub MCP server was configured with only the `repos` toolset when this report was generated, so issue-management MCP tools were not available.
+Issues #26–#50 were created through the GitHub MCP `mcp_github_mcp_se_issue_write` tool. The original issues #1–#25 were created with the GitHub CLI and were closed as duplicates.
 
 | Issue URL | Title | Created via MCP? |
 |-----------|-------|-----------------|
-| https://github.com/LavBharath8075/jira-confluence-automation/issues/1 | Decide on a simple validation workflow for each feature before moving on. | No |
+| https://github.com/LavBharath8075/jira-confluence-automation/issues/30 | Create the project structure for the Streamlit app and shared package layout. | Yes |
+| https://github.com/LavBharath8075/jira-confluence-automation/issues/36 | Build a page title, layout, and sidebar structure. | Yes |
+
+### Issues Created Using MCP
+
+The MCP-created issue set is #26–#50, covering all 25 Phase 1 tasks.
 
 ## MCP Tools Used
 - mcp_github_mcp_se_create_repository
 - mcp_github_mcp_se_search_repositories
 - mcp_github_mcp_se_get_file_contents
+- mcp_github_mcp_se_issue_read
+- mcp_github_mcp_se_issue_write
