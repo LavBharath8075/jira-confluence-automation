@@ -1,3 +1,12 @@
+# Module 15 Completion Report
+
+## Script Metadata
+- Filename: validate_walkthroughs.py
+- Language: Python
+- Purpose: Finds walkthrough files under modules/**/walkthrough.md and validates each file for required Summary and Quiz sections, placeholder content, and ordering issues.
+
+## Script Contents
+```python
 from __future__ import annotations
 
 import re
@@ -15,15 +24,8 @@ def find_walkthrough_files() -> list[Path]:
 
 
 def has_heading(text: str, heading_name: str) -> bool:
-    target = heading_name.strip().lower()
-    for line in text.splitlines():
-        stripped = line.strip()
-        if not stripped.startswith("#"):
-            continue
-        name = re.sub(r"^#+\s*", "", stripped).strip().lower()
-        if name == target:
-            return True
-    return False
+    pattern = rf"^#{1,6}\s+{re.escape(heading_name)}\s*$"
+    return re.search(pattern, text, flags=re.IGNORECASE | re.MULTILINE) is not None
 
 
 def get_issues(text: str) -> list[str]:
@@ -57,11 +59,10 @@ def validate_file(path: Path) -> tuple[str, list[str]]:
 
 
 def print_report(path: Path, status: str, issues: list[str]) -> None:
-    text = path.read_text(encoding="utf-8", errors="replace")
     missing_sections = []
-    if not has_heading(text, "Summary"):
+    if not has_heading(path.read_text(encoding="utf-8", errors="replace"), "Summary"):
         missing_sections.append("Summary")
-    if not has_heading(text, "Quiz"):
+    if not has_heading(path.read_text(encoding="utf-8", errors="replace"), "Quiz"):
         missing_sections.append("Quiz")
 
     print(f"File: {path.relative_to(ROOT)}")
@@ -91,3 +92,26 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+```
+
+## Parameters
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| None | The script uses the repository layout and scans all files under modules/**/walkthrough.md automatically. It does not accept command-line arguments. | N/A |
+
+## Test Run Output
+```text
+File: modules\bad-module\walkthrough.md
+Status: Needs updates
+Missing sections: Summary, Quiz
+Issues:
+- Missing Summary section.
+- Missing Quiz section.
+
+File: modules\good-module\walkthrough.md
+Status: Needs updates
+Missing sections: Summary, Quiz
+Issues:
+- Missing Summary section.
+- Missing Quiz section.
+```
