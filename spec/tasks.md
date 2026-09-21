@@ -18,6 +18,7 @@
 ### T0.1 — Confirm product boundary and migration strategy
 
 **Priority:** P0  
+**Status:** Completed  
 **Dependencies:** None  
 **Outputs:** Approved scope decision and updated specification.
 
@@ -27,6 +28,8 @@
 - The decision states whether the existing calculator/mock dashboard must remain runnable.
 - Confluence publication is classified as required for v1, feature-flagged v1, or deferred.
 - `spec/specification.md` and `spec/plan.md` reflect the decision consistently.
+
+**Decision:** React 18/Vite plus Node.js/Express replaces the inherited Streamlit runtime. The existing calculator/mock dashboard remains runnable during migration as a compatibility constraint. Confluence publication is optional and feature-flagged for v1; core report generation, history, and Markdown download do not depend on it.
 
 ### T0.2 — Define authentication and authorization
 

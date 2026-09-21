@@ -1,7 +1,7 @@
 # Jira/Confluence Automation — Feature Specification
 
 **Specification ID:** JCA-001  
-**Status:** Draft  
+**Status:** Draft — product boundary decided; remaining Phase 0 decisions open  
 **Version:** 1.0.0  
 **Source:** Module 08 `work/module03-task/project_spec.md`  
 **Constitution:** `spec/constitution.md`  
@@ -15,7 +15,15 @@ Build a web application that retrieves Cloud migration delivery data from Jira C
 
 The application will use Jira as the source for delivery data, PostgreSQL for application-owned report history and audit metadata, and Confluence as an optional controlled publication destination for generated reports. The React frontend and Node.js/Express backend are the approved application boundary.
 
-## 2. Goals
+## 2. Product boundary and migration strategy
+
+The React 18/Vite frontend and Node.js/Express backend defined in this specification replace the inherited Streamlit runtime for the target product. Streamlit is not a required runtime for the new application.
+
+The existing calculator and mock dashboard remain runnable during migration as a repository compatibility constraint. They are not part of the new Jira/Confluence application surface and must not be silently removed or changed while the new product is introduced.
+
+Confluence publication is an optional, feature-flagged v1 capability. Core Jira retrieval, report generation, history, and Markdown download MUST work when Confluence is disabled or unconfigured. Publication-specific requirements apply only when the capability is enabled and the required configuration and authorization are present.
+
+## 3. Goals
 
 The first release MUST:
 
@@ -27,7 +35,7 @@ The first release MUST:
 6. Allow an authorized user to publish an approved generated report to a configured Confluence location when that integration is enabled.
 7. Make incomplete, stale, or partially retrieved data visible rather than presenting it as complete.
 
-## 3. Non-goals and exclusions
+## 4. Non-goals and exclusions
 
 The following are excluded from the first release:
 
@@ -40,25 +48,25 @@ The following are excluded from the first release:
 - Uncontrolled bulk updates to Jira or Confluence.
 - Treating Confluence as the source of Jira delivery metrics.
 
-## 4. Users and personas
+## 5. Users and personas
 
-### 4.1 Product Owner
+### 5.1 Product Owner
 
 The Product Owner selects a reporting period, reviews Jira-derived metrics, enters narrative and manual RAG status, downloads the report, and optionally publishes the completed report to Confluence.
 
-### 4.2 Delivery team member
+### 5.2 Delivery team member
 
 A delivery team member is represented by a configured Jira assignee. Their work appears in completed-work, WIP, and per-assignee contribution views. Team members do not need write access to Jira or Confluence through this application unless a future specification adds it.
 
-### 4.3 Report audience
+### 5.3 Report audience
 
 Engineering leadership and project sponsors consume the generated Markdown or Confluence page. They require readable summaries, traceable issue links, clear limitations, and visible risks.
 
-### 4.4 Operator
+### 5.4 Operator
 
 An operator configures credentials, mappings, status rules, database connectivity, logging, and deployment settings. Operators require actionable diagnostics but must not see secret values in logs or reports.
 
-## 5. User journeys
+## 6. User journeys
 
 ### Journey A — Generate the current weekly report
 
@@ -96,7 +104,7 @@ An operator configures credentials, mappings, status rules, database connectivit
 4. The application does not generate a report that appears complete when required Jira data was not retrieved.
 5. If partial results are allowed by the business rules, the report clearly labels them as partial and lists the limitations.
 
-## 6. Functional requirements
+## 7. Functional requirements
 
 ### FR-1 — Reporting period selection
 
@@ -262,7 +270,7 @@ The Express backend MUST provide documented, versioned endpoints for at least:
 
 The React frontend MUST consume these endpoints through an API client and MUST not contain Jira or Confluence credentials.
 
-## 7. Domain entities
+## 8. Domain entities
 
 ### Report
 
@@ -292,7 +300,7 @@ An audit record for a Confluence create/update attempt, including report ID, tar
 
 An immutable record of an automation action, initiating actor or process, target resource, outcome, correlation ID, and timestamp without secret values.
 
-## 8. User interface requirements
+## 9. User interface requirements
 
 The React application MUST provide:
 
@@ -307,7 +315,7 @@ The React application MUST provide:
 
 The UI MUST use descriptive labels and status text rather than color alone and MUST support keyboard-accessible interaction.
 
-## 9. Security and privacy requirements
+## 10. Security and privacy requirements
 
 - Jira and Confluence credentials MUST be supplied through environment configuration or managed secrets.
 - Tokens and passwords MUST never be committed, logged, returned by the API, placed in a browser bundle, or included in Markdown.
@@ -319,7 +327,7 @@ The UI MUST use descriptive labels and status text rather than color alone and M
 - Audit logs MUST exclude secrets and unnecessary sensitive content.
 - `.env` files containing real values MUST remain excluded from version control.
 
-## 10. Reliability, performance, and operations
+## 11. Reliability, performance, and operations
 
 ### Reliability
 
@@ -342,7 +350,7 @@ The UI MUST use descriptive labels and status text rather than color alone and M
 - PostgreSQL schema changes MUST use versioned migrations.
 - PostgreSQL 15 MUST be runnable locally through Docker Compose.
 
-## 11. Acceptance criteria
+## 12. Acceptance criteria
 
 1. An authorized user can connect to Jira Cloud and retrieve visible issues from `EPMCDMETST`.
 2. The default report period is the previous completed Monday–Sunday week in `America/New_York`.
@@ -358,9 +366,10 @@ The UI MUST use descriptive labels and status text rather than color alone and M
 12. A configured report can be explicitly published to Confluence with an auditable result.
 13. The UI provides accessible loading, empty, partial, success, and error states.
 14. Secrets do not appear in logs, API responses, browser assets, audit records, or rendered reports.
-15. Existing project startup and unrelated calculator functionality remain intact during migration from the source specification.
+15. Existing project startup and unrelated calculator functionality remain intact during migration from the source specification; Streamlit is not required as the target product runtime.
+16. Core report generation, history, and Markdown download work with Confluence disabled; Confluence publication is tested separately when the feature flag and configuration are enabled.
 
-## 12. Required test coverage
+## 13. Required test coverage
 
 The implementation plan MUST include tests for:
 
@@ -376,7 +385,7 @@ The implementation plan MUST include tests for:
 - Secret redaction from logs and rendered output.
 - Critical React workflows and accessible error/loading states.
 
-## 13. Open questions and decisions required before implementation
+## 14. Open questions and decisions required before implementation
 
 1. Does “three months” define the generation horizon, the retention period, or both?
 2. What are the six Jira account identifiers for the delivery team?
@@ -391,7 +400,7 @@ The implementation plan MUST include tests for:
 11. Which users may generate reports, regenerate history, and publish to Confluence?
 12. What is the policy for reports with partial Jira data: block generation, allow download with warnings, or allow both with explicit confirmation?
 
-## 14. Constitution alignment
+## 15. Constitution alignment
 
 This specification follows `spec/constitution.md`:
 

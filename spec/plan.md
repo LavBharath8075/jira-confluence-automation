@@ -4,7 +4,7 @@
 **Specification:** `spec/specification.md`  
 **Constitution:** `spec/constitution.md`  
 **Clarifications:** `spec/clarify.md`  
-**Status:** Draft — gated by clarification decisions  
+**Status:** Draft — product boundary decided; gated by remaining clarification decisions  
 **Version:** 1.0.0  
 **Last Updated:** 2026-09-21
 
@@ -45,8 +45,8 @@ Resolve the implementation-blocking decisions identified in `spec/clarify.md` be
 
 ### Required decisions
 
-1. Confirm that React/Express replaces the source Streamlit runtime, or define a coexistence/migration period.
-2. Decide whether Confluence publication is required for v1, feature-flagged, or deferred.
+1. **Resolved:** React/Express replaces the source Streamlit runtime; the existing calculator/mock dashboard remains runnable as a migration compatibility constraint.
+2. **Resolved:** Confluence publication is optional and feature-flagged for v1; core report generation and Markdown download work without it.
 3. Select authentication, authorization roles, session strategy, and Jira/Confluence service-account model.
 4. Define the three-month horizon and history-retention semantics.
 5. Define exact Jira query scope, WIP rules, completed-work rules, status mappings, and period boundaries.
@@ -360,7 +360,7 @@ Every phase review MUST verify:
 | Sensitive source content | Data exposure | Least privilege, sanitization, redaction, access control, threat testing |
 | Large or slow report generation | HTTP timeouts and poor UX | Define async job model in Phase 0; expose progress and retry state |
 | Historical non-reproducibility | Loss of stakeholder trust | Store source/configuration snapshots and immutable report versions |
-| Scope drift from Streamlit source | Unplanned migration work | Explicit replacement/coexistence decision and acceptance boundary |
+| Scope drift from Streamlit source | Unplanned migration work | React/Express replacement is decided; preserve legacy calculator/mock-dashboard compatibility and test the boundary |
 
 ## 15. Release definition of done
 

@@ -1,0 +1,13 @@
+{
+	"name": "jira-confluence-automation",
+	"private": true,
+	"workspaces": [
+		"apps/api",
+		"apps/web",
+		"packages/shared"
+	],
+	"scripts": {
+		"typecheck": "npm run typecheck --workspace apps/api && npm run typecheck --workspace apps/web",
+		"build": "npm run build --workspace apps/web"
+	}
+}
