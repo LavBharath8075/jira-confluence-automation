@@ -9,6 +9,13 @@
         "./path/to/mcp-echo.ps1"
       ]
     },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "headers": {
+        "X-MCP-Toolsets": "repos"
+      }
+    },
     "atlassian-official": {
       "type": "http",
       "url": "https://mcp.atlassian.com/v2/mcp"
@@ -24,10 +31,6 @@
         "JIRA_API_TOKEN": "${env:JIRA_API_TOKEN}",
         "JIRA_PROJECT": "${env:JIRA_PROJECT}"
       }
-    },
-     "github": { 
-      "type": "http", 
-      "url": "https://api.githubcopilot.com/mcp/"
-    }  
+    }
   }
 }
