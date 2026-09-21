@@ -13,7 +13,7 @@
       "type": "http",
       "url": "https://api.githubcopilot.com/mcp/",
       "headers": {
-        "X-MCP-Toolsets": "repos"
+        "X-MCP-Toolsets": "repos,issues"
       }
     },
     "atlassian-official": {

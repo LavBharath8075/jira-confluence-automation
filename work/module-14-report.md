@@ -226,6 +226,9 @@ Tasks involving Jira/MCP access, credential decisions, ambiguous product behavio
 - [ ] Documentation matches the implementation and the project can be onboarded by a new developer. — **custom skill** + **application code**
 
 ## GitHub Issues
+
+Issue #1 was created with the GitHub CLI, not MCP; its `No` value is intentional and verified. The GitHub MCP server was configured with only the `repos` toolset when this report was generated, so issue-management MCP tools were not available.
+
 | Issue URL | Title | Created via MCP? |
 |-----------|-------|-----------------|
 | https://github.com/LavBharath8075/jira-confluence-automation/issues/1 | Decide on a simple validation workflow for each feature before moving on. | No |
