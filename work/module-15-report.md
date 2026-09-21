@@ -191,12 +191,6 @@ if __name__ == "__main__":
 
 ## Test Run Output
 ```text
-Dry run: would process 4 file(s) from 'modules'
-modules\bad-module\walkthrough.md
-modules\good-module\walkthrough.md
-modules\mixed-module\walkthrough.md
-modules\nested\extra\walkthrough.md
----
 Scanning 'modules' for 'walkthrough.md' (recursive=True)
 File: modules\bad-module\walkthrough.md
 Status: Needs updates
@@ -228,6 +222,4 @@ Issues:
 - Strict mode: required headings are missing.
 
 Summary: 1 passed, 3 needs updates, 4 total.
----
-Dry run: would process 0 file(s) from 'modules'
 ```
