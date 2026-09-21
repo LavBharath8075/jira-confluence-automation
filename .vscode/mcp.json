@@ -31,6 +31,13 @@
         "JIRA_API_TOKEN": "${env:JIRA_API_TOKEN}",
         "JIRA_PROJECT": "${env:JIRA_PROJECT}"
       }
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "chrome-devtools-mcp@latest"
+      ]
     }
   }
 }
