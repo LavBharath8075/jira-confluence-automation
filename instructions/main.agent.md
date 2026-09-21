@@ -12,5 +12,8 @@
 - [`./instructions/fetching-jira-issue-data.agent.md`](./fetching-jira-issue-data.agent.md) — fetch and format Jira issue data for reporting workflows.
   + Keywords: Jira, issue data, API, fetch, formatting, reporting
 
+- [`./instructions/validate-instructions.agent.md`](./validate-instructions.agent.md) — validate walkthroughs or similar markdown files against a reusable checklist, including bulk processing, dry-run checks, and structured reporting.
+  + Keywords: validation, walkthrough, markdown, bulk processing, dry-run, reporting
+
 - [`./instructions/calculate-compound-interest.agent.md`](./calculate-compound-interest.agent.md) — calculate compound interest for a principal, rate, compounding frequency, and time period, then present the final amount and total interest earned.
   + Keywords: compound interest, investment, final amount, total interest, financial calculation
