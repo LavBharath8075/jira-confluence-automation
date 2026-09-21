@@ -191,10 +191,11 @@ if __name__ == "__main__":
 
 ## Test Run Output
 ```text
-Dry run: would process 3 file(s) from 'modules'
+Dry run: would process 4 file(s) from 'modules'
 modules\bad-module\walkthrough.md
 modules\good-module\walkthrough.md
 modules\mixed-module\walkthrough.md
+modules\nested\extra\walkthrough.md
 ---
 Scanning 'modules' for 'walkthrough.md' (recursive=True)
 File: modules\bad-module\walkthrough.md
@@ -218,5 +219,15 @@ Issues:
 - Contains placeholder or unfinished wording.
 - Strict mode: required headings are missing.
 
-Summary: 1 passed, 2 needs updates, 3 total.
+File: modules\nested\extra\walkthrough.md
+Status: Needs updates
+Missing sections: Quiz
+Issues:
+- Missing Quiz section.
+- Contains placeholder or unfinished wording.
+- Strict mode: required headings are missing.
+
+Summary: 1 passed, 3 needs updates, 4 total.
+---
+Dry run: would process 0 file(s) from 'modules'
 ```
